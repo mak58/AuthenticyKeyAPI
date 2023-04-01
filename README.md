@@ -1,4 +1,4 @@
-﻿# KeyAuthenticyAPI
+﻿# AuthenticyKeyAPI
  
  This application is a intern challenge launched by my company in order to provide learning.
  
