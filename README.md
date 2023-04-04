@@ -3,13 +3,13 @@
  This application is a intern challenge launched by my company in order to provide learning.
  
  The project contains some tecniques of clean Code as:
- > SOLID
- > KISS
- > one dot per line rule
- > Abstractions
- > OOP
- > dependecy Injection
- > Unit test
+ * SOLID
+ * KISS
+ * one dot per line rule
+ * Abstractions
+ * OOP
+ * dependecy Injection
+ * Unit test
 
 The code variable and method are with names in Portuguese language. 
 This application is very specific for our regional country and professional sector.
