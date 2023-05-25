@@ -2,6 +2,7 @@ using ChaveAutenticidadeSelos.Services;
 using Polly;
 using Polly.Contrib.WaitAndRetry;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

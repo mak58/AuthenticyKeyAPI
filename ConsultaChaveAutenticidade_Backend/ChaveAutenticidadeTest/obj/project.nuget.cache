@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4em82dx2+TY4JSMT5gbA9bizp47OmKnA/LV1dv1Ptri7+eI6vl8mTHpvxQR7DUMzvilQ6yx4m7zpgx6b7lyy8g==",
+  "dgSpecHash": "BJ3p1eDyeysphKfaZDO5Dn09ZJNtq1rDGihvuTfG3LDfStx+dfRIeN1MIfUgcPCHRWBPSR65GCtzExkxE+dsUw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTest\\ChaveAutenticidadeTest.csproj",
+  "projectFilePath": "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTest\\ChaveAutenticidadeTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marcio.koehler\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\marcio.koehler\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
@@ -26,6 +26,7 @@
     "C:\\Users\\marcio.koehler\\.nuget\\packages\\mstest.testframework\\3.0.2\\mstest.testframework.3.0.2.nupkg.sha512",
     "C:\\Users\\marcio.koehler\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\marcio.koehler\\.nuget\\packages\\nuget.frameworks\\5.11.0\\nuget.frameworks.5.11.0.nupkg.sha512",
+    "C:\\Users\\marcio.koehler\\.nuget\\packages\\oneof\\3.0.243\\oneof.3.0.243.nupkg.sha512",
     "C:\\Users\\marcio.koehler\\.nuget\\packages\\polly\\7.2.3\\polly.7.2.3.nupkg.sha512",
     "C:\\Users\\marcio.koehler\\.nuget\\packages\\polly.contrib.waitandretry\\1.1.1\\polly.contrib.waitandretry.1.1.1.nupkg.sha512",
     "C:\\Users\\marcio.koehler\\.nuget\\packages\\polly.extensions.http\\3.0.0\\polly.extensions.http.3.0.0.nupkg.sha512",

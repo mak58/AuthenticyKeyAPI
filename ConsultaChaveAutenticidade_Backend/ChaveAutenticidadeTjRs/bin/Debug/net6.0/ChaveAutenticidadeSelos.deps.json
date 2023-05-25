@@ -12,6 +12,7 @@
           "HtmlAgilityPack": "1.11.46",
           "Microsoft.Extensions.Http": "7.0.0",
           "Microsoft.Extensions.Http.Polly": "7.0.1",
+          "OneOf": "3.0.243",
           "Polly": "7.2.3",
           "Polly.Contrib.WaitAndRetry": "1.1.1",
           "Refit.HttpClientFactory": "6.3.2",
@@ -150,6 +151,14 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "assemblyVersion": "1.2.3.0",
             "fileVersion": "1.2.3.0"
+          }
+        }
+      },
+      "OneOf/3.0.243": {
+        "runtime": {
+          "lib/netstandard2.0/OneOf.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -363,6 +372,13 @@
       "sha512": "sha512-Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
+    },
+    "OneOf/3.0.243": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7zbyWxAbh0FZTVTpfqd8lIo9ejgoxPuadZgYTZLCq8aCtLQ5biQZ8gv61hpCbi/XuII0JlqfOTfocvv4wu8Xdw==",
+      "path": "oneof/3.0.243",
+      "hashPath": "oneof.3.0.243.nupkg.sha512"
     },
     "Polly/7.2.3": {
       "type": "package",

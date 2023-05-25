@@ -540,6 +540,15 @@
           "lib/netstandard2.0/NuGet.Frameworks.dll": {}
         }
       },
+      "OneOf/3.0.243": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/OneOf.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OneOf.dll": {}
+        }
+      },
       "Polly/7.2.3": {
         "type": "package",
         "compile": {
@@ -731,6 +740,7 @@
           "HtmlAgilityPack": "1.11.46",
           "Microsoft.Extensions.Http": "7.0.0",
           "Microsoft.Extensions.Http.Polly": "7.0.1",
+          "OneOf": "3.0.243",
           "Polly": "7.2.3",
           "Polly.Contrib.WaitAndRetry": "1.1.1",
           "Refit.HttpClientFactory": "6.3.2",
@@ -1781,6 +1791,21 @@
         "nuget.frameworks.nuspec"
       ]
     },
+    "OneOf/3.0.243": {
+      "sha512": "7zbyWxAbh0FZTVTpfqd8lIo9ejgoxPuadZgYTZLCq8aCtLQ5biQZ8gv61hpCbi/XuII0JlqfOTfocvv4wu8Xdw==",
+      "type": "package",
+      "path": "oneof/3.0.243",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/OneOf.dll",
+        "lib/net45/OneOf.dll",
+        "lib/netstandard1.3/OneOf.dll",
+        "lib/netstandard2.0/OneOf.dll",
+        "oneof.3.0.243.nupkg.sha512",
+        "oneof.nuspec"
+      ]
+    },
     "Polly/7.2.3": {
       "sha512": "DeCY0OFbNdNxsjntr1gTXHJ5pKUwYzp04Er2LLeN3g6pWhffsGuKVfMBLe1lw7x76HrPkLxKEFxBlpRxS2nDEQ==",
       "type": "package",
@@ -2143,11 +2168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTest\\ChaveAutenticidadeTest.csproj",
+      "projectUniqueName": "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTest\\ChaveAutenticidadeTest.csproj",
       "projectName": "ChaveAutenticidadeTest",
-      "projectPath": "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTest\\ChaveAutenticidadeTest.csproj",
+      "projectPath": "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTest\\ChaveAutenticidadeTest.csproj",
       "packagesPath": "C:\\Users\\marcio.koehler\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTest\\obj\\",
+      "outputPath": "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\marcio.koehler\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2162,8 +2187,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj": {
-              "projectPath": "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj"
+            "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj": {
+              "projectPath": "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj"
             }
           }
         }

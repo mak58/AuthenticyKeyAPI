@@ -1,21 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
-using ChaveAutenticidadeSelos.Core.Dto;
 using ChaveAutenticidadeSelos.Services.Interfaces;
+using ChaveAutenticidadeTjRs.Core.Models;
 
 namespace ChaveAutenticidadeSelos.Controllers
 {
     [Route("[controller]")]
-    public class ChaveAutenticidadeTjController : ControllerBase
+    public class ConsultarChaveAutenticidadeTJRsController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<DadosServentiaDto>>> ConsultarChaveAutenticidadeTJRs(
+        public async Task<IActionResult> ChaveAutenticidadeTj(
             [FromServices] IChaveAutenticidadeService _chaveAutenticidadeService,
             [FromQuery] List<string> chavesAutenticidade)
-        {
-            var result =
-                await _chaveAutenticidadeService.ObterDadosChaveAutenticidade(chavesAutenticidade);
+        {            
+                var result = 
+                        await _chaveAutenticidadeService.ObterDadosChaveAutenticidade(chavesAutenticidade);
 
-            return Ok(result);
+                return result.Match<IActionResult>(Ok,
+                            x => NotFound(Errors.ListaVazia),                    
+                            y => BadRequest(Errors.ChaveInvalida),
+                            w => BadRequest(Errors.ChaveNaoNumerica),
+                            z => NotFound(Errors.ChaveNulla));                
         }
     }
 }

@@ -1,17 +1,17 @@
+using System.Text.RegularExpressions;
 using ChaveAutenticidadeSelos.Core.Dto;
 using ChaveAutenticidadeSelos.Services.Interfaces;
-using ChaveAutenticidadeSelos.Shared.Exceptions;
+using ChaveAutenticidadeTjRs.Shared;
+using OneOf;
 
 namespace ChaveAutenticidadeSelos.Services
 {
     public class ChaveAutenticidadeService : IChaveAutenticidadeService
     {
         private readonly IHttpClientFactory _clientFactory;
-
         private readonly IExtrairInformacoes _ExtrairInfo;
 
         private const string ClientName = "ConsultaAutenticidadeTjApi";
-
         public ChaveAutenticidadeService(IHttpClientFactory clientFactory, IExtrairInformacoes extrairInfo)
         {
             _clientFactory = clientFactory;
@@ -22,32 +22,41 @@ namespace ChaveAutenticidadeSelos.Services
         /// Método responsável por validar informações da(s) chave(s) de autenticidade(s) e chamar o método para extratir todas as informações. 
         /// </summary>
         /// <param name="chavesAutenticidade"></param>
-        /// <returns></returns>
-        public async Task<List<DadosServentiaDto>> ObterDadosChaveAutenticidade(List<string> chavesAutenticidade)
+        /// <returns> A class or a especific error. </returns>
+
+        async Task<OneOf<List<DadosServentiaDto>, ListaVazia, ChaveInvalida, ChaveNaoNumerica, ChaveNulla>> 
+            IChaveAutenticidadeService.ObterDadosChaveAutenticidade(List<string> chavesAutenticidade)
         {
-           var client = _clientFactory.CreateClient(ClientName);
+            var client = _clientFactory.CreateClient(ClientName);
 
-           string arquivoHTML;
+            string arquivoHTML;
 
-           var dadosList = new List<DadosServentiaDto>();
-        
-           ChaveAutenticidadeServicoExcecao.LancarExcecaoListaVaziaChaves(chavesAutenticidade);
+            var dadosList = new List<DadosServentiaDto>();
 
-           foreach (var item in chavesAutenticidade)
-           {            
-                ChaveAutenticidadeServicoExcecao.LancarExcecaoTamanhoChaveAutenticidade(item);
+            // if (chavesAutenticidade.Count == 0)
+            //     return new ListaVazia();
 
-                ChaveAutenticidadeServicoExcecao.LancarExcecaoValidacaoChaveAutenticidade(item);          
-            
-                arquivoHTML = await client.GetStringAsync($"consulta_selo_chave.php?c={item}");
+            if (chavesAutenticidade.Count == 0)
+                return new ListaVazia();
+            {
+                foreach (var item in chavesAutenticidade)
+                {
+                    if (item.Length != 22)
+                        return new ChaveInvalida();
 
-                ChaveAutenticidadeServicoExcecao.LancarExcecaoChaveNaoEncontrada(item, arquivoHTML);
+                    if (!Regex.IsMatch(item, @"^[0-9]+$"))
+                        return new ChaveNaoNumerica();
 
-                dadosList.Add(_ExtrairInfo.ExtrairInformacoesChave(arquivoHTML));
-                
-           } 
+                    arquivoHTML = await client.GetStringAsync($"consulta_selo_chave.php?c={item}");
 
-            return dadosList;            
+                    if (!arquivoHTML.Contains("table"))
+                        return new ChaveNulla();
+
+                    dadosList.Add(_ExtrairInfo.ExtrairInformacoesChave(arquivoHTML));
+                }
+
+                return dadosList;
+            }            
         }
     }
 }

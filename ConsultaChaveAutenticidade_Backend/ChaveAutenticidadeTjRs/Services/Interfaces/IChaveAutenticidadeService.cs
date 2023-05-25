@@ -1,9 +1,10 @@
 using ChaveAutenticidadeSelos.Core.Dto;
+using OneOf;
 
 namespace ChaveAutenticidadeSelos.Services.Interfaces
 {
     public interface IChaveAutenticidadeService
     {
-         Task<List<DadosServentiaDto>> ObterDadosChaveAutenticidade(List<string>chaveAutenticidade);
+        Task<OneOf<List<DadosServentiaDto>, ListaVazia, ChaveInvalida, ChaveNaoNumerica, ChaveNulla>> ObterDadosChaveAutenticidade(List<string>chavesAutenticidade);
     }
 }

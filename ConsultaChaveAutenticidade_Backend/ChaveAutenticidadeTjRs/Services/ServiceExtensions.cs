@@ -1,4 +1,6 @@
 using ChaveAutenticidadeSelos.Services.Interfaces;
+using ChaveAutenticidadeTjRs.Shared;
+using ChaveAutenticidadeTjRs.Services.Interfaces;
 
 namespace ChaveAutenticidadeSelos.Services
 
@@ -9,6 +11,7 @@ namespace ChaveAutenticidadeSelos.Services
         {
             services.AddScoped<IChaveAutenticidadeService, ChaveAutenticidadeService>();
             services.AddScoped<IExtrairInformacoes, ExtrairInformacoes>();
+            services.AddScoped<IValidacao, Validacao>();
 
             return services;
         }

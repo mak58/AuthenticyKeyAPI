@@ -57,7 +57,7 @@ namespace ChaveAutenticidadeSelos.Services
                     DataEmissao = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[3]/td[1]").InnerText.Trim(),
                     Cobranca = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[4]/td[1]").InnerText.Trim(),
                     Ato = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[5]/td[1]").InnerText.Trim(),
-                    Emolumento = emolumento.Substring(1, emolumento.IndexOf(" ")), 
+                    Emolumento = emolumento.Substring(0, emolumento.IndexOf(" ")), 
                     ValorAvaliacao = valorAvaliacao,                 
                     ValorSelo = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[7]/td[1]").InnerText.Trim()
                         .Substring(18)
