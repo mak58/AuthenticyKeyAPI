@@ -33,23 +33,21 @@ namespace ChaveAutenticidadeSelos.Services
 
             var dadosList = new List<DadosServentiaDto>();
 
-            // if (chavesAutenticidade.Count == 0)
-            //     return new ListaVazia();
-
-            if (chavesAutenticidade.Count == 0)
+            if (ChaveAutenticidadeServicoValidacao.VerificarListaVaziaChaves(chavesAutenticidade))
                 return new ListaVazia();
+
             {
                 foreach (var item in chavesAutenticidade)
                 {
-                    if (item.Length != 22)
+                    if (ChaveAutenticidadeServicoValidacao.VerificarTamanhoChaveAutenticidade(item))
                         return new ChaveInvalida();
 
-                    if (!Regex.IsMatch(item, @"^[0-9]+$"))
+                    if (ChaveAutenticidadeServicoValidacao.VerificarValidacaoChaveAutenticidade(item))
                         return new ChaveNaoNumerica();
 
                     arquivoHTML = await client.GetStringAsync($"consulta_selo_chave.php?c={item}");
 
-                    if (!arquivoHTML.Contains("table"))
+                    if (ChaveAutenticidadeServicoValidacao.VerificarChaveNaoEncontrada(arquivoHTML))
                         return new ChaveNulla();
 
                     dadosList.Add(_ExtrairInfo.ExtrairInformacoesChave(arquivoHTML));
