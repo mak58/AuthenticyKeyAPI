@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BJ3p1eDyeysphKfaZDO5Dn09ZJNtq1rDGihvuTfG3LDfStx+dfRIeN1MIfUgcPCHRWBPSR65GCtzExkxE+dsUw==",
+  "dgSpecHash": "mGguCIvkzx81PQ5rRDQxX5zW3zXkNTvx3wxd4NGx6Kzqp5zy28rs23+XLJAJy//VmsSkU0VWnS69tH0V6Oa44Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTest\\ChaveAutenticidadeTest.csproj",
+  "projectFilePath": "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTest\\ChaveAutenticidadeTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marcio.koehler\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\marcio.koehler\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

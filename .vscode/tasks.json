@@ -36,6 +36,15 @@
                 "${workspaceFolder}/ConsultaChaveAutenticidade_Backend/ChaveAutenticidadeTjRs/ChaveAutenticidadeSelos.csproj"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "type": "msbuild",
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": "build",
+            "label": "Build: ChaveAutenticidadeTest.csproj",
+            "detail": "Build the ChaveAutenticidadeTest.csproj project using dotnet build"
         }
     ]
 }

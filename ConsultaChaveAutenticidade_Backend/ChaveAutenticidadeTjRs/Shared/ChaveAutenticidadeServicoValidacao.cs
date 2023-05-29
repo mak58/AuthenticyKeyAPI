@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace ChaveAutenticidadeTjRs.Shared;
 
-public static class ChaveAutenticidadeServicoValidacao //: IChaveAutenticidadeServicoValidacao
+public class ChaveAutenticidadeServicoValidacao 
 {
     public static bool VerificarListaVaziaChaves(List<string> chaves)
     {
