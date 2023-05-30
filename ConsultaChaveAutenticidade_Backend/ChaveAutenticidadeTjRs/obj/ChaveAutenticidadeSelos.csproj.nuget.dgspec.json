@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj": {}
+    "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj": {
+    "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj",
+        "projectUniqueName": "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj",
         "projectName": "ChaveAutenticidadeSelos",
-        "projectPath": "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj",
+        "projectPath": "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\ChaveAutenticidadeSelos.csproj",
         "packagesPath": "C:\\Users\\marcio.koehler\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\obj\\",
+        "outputPath": "c:\\Users\\marcio.koehler\\Documents\\HelloWorld\\ConsultaChaveAutenticidade_Backend\\ConsultaChaveAutenticidade_Backend\\ChaveAutenticidadeTjRs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marcio.koehler\\AppData\\Roaming\\NuGet\\NuGet.Config"
