@@ -4,6 +4,6 @@ namespace ChaveAutenticidadeSelos.Services.Interfaces
 {
     public interface IExtrairInformacoes
     {
-        public DadosServentiaDto ExtrairInformacoesChave(string chaveArquivo);
+        public DadosServentiaDto ExtrairInformacoesChave(string chaveArquivo, string chave);
     }
 }

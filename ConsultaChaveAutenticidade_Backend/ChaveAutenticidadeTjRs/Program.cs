@@ -2,11 +2,9 @@ using ChaveAutenticidadeSelos.Services;
 using Polly;
 using Polly.Contrib.WaitAndRetry;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -22,7 +20,7 @@ builder.Services.AddHttpClient("ConsultaAutenticidadeTjApi", client =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+//Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

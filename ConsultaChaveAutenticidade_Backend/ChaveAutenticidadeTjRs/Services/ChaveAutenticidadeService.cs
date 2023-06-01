@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using ChaveAutenticidadeSelos.Core.Dto;
 using ChaveAutenticidadeSelos.Services.Interfaces;
 using ChaveAutenticidadeTjRs.Shared;
@@ -10,12 +9,14 @@ namespace ChaveAutenticidadeSelos.Services
     {
         private readonly IHttpClientFactory _clientFactory;
         private readonly IExtrairInformacoes _ExtrairInfo;
+        private readonly IConfiguration _Config;
 
         private const string ClientName = "ConsultaAutenticidadeTjApi";
-        public ChaveAutenticidadeService(IHttpClientFactory clientFactory, IExtrairInformacoes extrairInfo)
+        public ChaveAutenticidadeService(IHttpClientFactory clientFactory, IExtrairInformacoes extrairInfo, IConfiguration config)
         {
             _clientFactory = clientFactory;
             _ExtrairInfo = extrairInfo;
+            _Config = config;
         }
 
         /// <summary>
@@ -45,12 +46,14 @@ namespace ChaveAutenticidadeSelos.Services
                     if (ChaveAutenticidadeServicoValidacao.VerificarValidacaoChaveAutenticidade(item))
                         return new ChaveNaoNumerica();
 
-                    arquivoHTML = await client.GetStringAsync($"consulta_selo_chave.php?c={item}");
+                    var Url = _Config.GetValue<string>("Config:UrlConsultaChaveAutenticidade") + item;
+
+                    arquivoHTML = await client.GetStringAsync(Url);
 
                     if (ChaveAutenticidadeServicoValidacao.VerificarChaveNaoEncontrada(arquivoHTML))
                         return new ChaveNulla();
 
-                    dadosList.Add(_ExtrairInfo.ExtrairInformacoesChave(arquivoHTML));
+                    dadosList.Add(_ExtrairInfo.ExtrairInformacoesChave(arquivoHTML, item));
                 }
 
                 return dadosList;

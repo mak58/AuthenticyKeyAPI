@@ -12,7 +12,7 @@ namespace ChaveAutenticidadeSelos.Services
         /// </summary>
         /// <param name="chaveArquivo"></param>
         /// <returns></returns>
-        public DadosServentiaDto ExtrairInformacoesChave(string chaveArquivo)
+        public DadosServentiaDto ExtrairInformacoesChave(string chaveArquivo, string chave)
         { 
             var chaveHtml = new HtmlDocument();
             var listaSelos = new List<SelosDto>();
@@ -23,19 +23,24 @@ namespace ChaveAutenticidadeSelos.Services
 
            var serventia = new DadosServentiaDto
            {
+               ChaveAutenticidade = chave,   
                ServentiaNome = chaveHtml.DocumentNode.SelectSingleNode("//table[1]/tr[1]/td[1]").InnerText.Trim(),
                ServentiaEndereco = chaveHtml.DocumentNode.SelectSingleNode("//table[1]/tr[2]/td[1]").InnerText.Trim()               
            };
 
             for (var index = 2; index <= documentTables.Count; index++)
             {
-                // Valor Emolumento e valor Avaliação
-                var emolumento = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[6]/td[1]").InnerText.TrimStart();                       
-                string valorAvaliacao = string.Empty;
+                string cobranca = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[4]/td[1]").InnerText.Trim();
 
-                if (emolumento.Contains('/'))                                                    
-                  valorAvaliacao = emolumento.Substring(emolumento.IndexOf('/') + 2).TrimEnd();                
+                // Valor Emolumento
+                var emolumento = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[6]/td[1]").InnerText.TrimStart();                                       
 
+                //  Valor Avaliação
+                var valorAvaliacao = 0M;
+
+                if (emolumento.Contains('/')) 
+                    valorAvaliacao = decimal.Parse(emolumento.Substring(emolumento.IndexOf('/') + 4).TrimEnd());                                                              
+                            
                 // Talão e número da NE
                 var talaoNota = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[2]/td[1]").InnerText.Trim();
                 string talao = string.Empty;
@@ -45,7 +50,9 @@ namespace ChaveAutenticidadeSelos.Services
                 {
                     talao = talaoNota.Substring(0, 1); 
                     notaEntrega = talaoNota.Substring(talaoNota.IndexOf('/') + 1);
-                }
+                }            
+                
+                var valorSelo = decimal.Parse(chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[7]/td[1]").InnerText.Trim().Substring(20));                                            
 
                 listaSelos.Add(new SelosDto
                 {
@@ -53,20 +60,20 @@ namespace ChaveAutenticidadeSelos.Services
                         .Replace("Selo Digital", "")
                         .Trim(),
                     Talao = talao,
-                    NotaEntrega = notaEntrega,
-                    DataEmissao = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[3]/td[1]").InnerText.Trim(),
-                    Cobranca = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[4]/td[1]").InnerText.Trim(),
+                    NotaEntrega = int.Parse(notaEntrega),
+                    DataEmissao = DateTime.Parse(chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[3]/td[1]").InnerText.Trim()),
+                    Cobranca = (cobranca.Contains("Sim")? true : false),
                     Ato = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[5]/td[1]").InnerText.Trim(),
-                    Emolumento = emolumento.Substring(0, emolumento.IndexOf(" ")), 
+                    Emolumento = decimal.Parse(emolumento.Substring(2, emolumento.IndexOf(" "))), 
                     ValorAvaliacao = valorAvaliacao,                 
-                    ValorSelo = chaveHtml.DocumentNode.SelectSingleNode("//table[" + index + "]/tr[7]/td[1]").InnerText.Trim()
-                        .Substring(18)
+                    ValorSelo = valorSelo
                     
                 });
             }
 
             return new DadosServentiaDto()
             {
+                ChaveAutenticidade = serventia.ChaveAutenticidade,
                 ServentiaNome = serventia.ServentiaNome,
                 ServentiaEndereco = serventia.ServentiaEndereco,                
                 Selos = listaSelos

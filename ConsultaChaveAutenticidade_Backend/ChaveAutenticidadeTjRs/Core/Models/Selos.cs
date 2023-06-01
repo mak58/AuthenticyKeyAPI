@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace ChaveAutenticidadeSelos.Core.Models
 {
     public class Selos
@@ -11,18 +6,18 @@ namespace ChaveAutenticidadeSelos.Core.Models
 
         public string? Talao { get; set; }
 
-        public string? NotaEntrega { get; set; }
+        public int NotaEntrega { get; set; }
 
-        public string? DataEmissao { get; set; }
+        public DateTime DataEmissao { get; set; }
 
-        public string? Cobranca { get; set; }        
+        public bool Cobranca { get; set; }        
 
         public string? Ato { get; set; } 
 
-        public string? Emolumento { get; set; }
+        public decimal Emolumento { get; set; }
 
-        public string? ValorSelo { get; set; }
+        public decimal ValorSelo { get; set; }
 
-        public string? ValorAvaliacao { get; set; }
+        public decimal ValorAvaliacao { get; set; }
     }
 }

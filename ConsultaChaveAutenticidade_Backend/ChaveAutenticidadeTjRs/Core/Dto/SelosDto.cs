@@ -4,21 +4,21 @@ namespace ChaveAutenticidadeSelos.Core.Dto
     {
         public string? NumeroSelo { get; set; }
 
-        public string? Talao { get; set; }
+        public string Talao { get; set; }
 
-        public string? NotaEntrega { get; set; }
+        public int? NotaEntrega { get; set; }
 
-         public string? DataEmissao { get; set; }
+         public DateTime DataEmissao { get; set; }
 
-        public string? Cobranca { get; set; } 
+        public bool Cobranca { get; set; } 
 
         public string? Ato { get; set; }      
 
-        public string? Emolumento { get; set; }
+        public Decimal Emolumento { get; set; }
 
-        public string? ValorSelo { get; set; }
+        public Decimal ValorSelo { get; set; }
 
-        public string? ValorAvaliacao { get; set; } = string.Empty;
+        public Decimal ValorAvaliacao { get; set; }
     
     }
 }
